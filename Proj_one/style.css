@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 :root {
-  --success-color: limegreen;
-  --error-color: orangered;
+  --success-color: rgba(159, 240, 46, 0.8);
+  --error-color: #da4167;
 }
 
 * {
@@ -159,7 +159,7 @@ h2 {
   border-color: rgba(98, 231, 233, 0.7);
 }
 
-.form-control.succes input {
+.form-control.success input {
   border-color: var(--success-color);
 }
 
