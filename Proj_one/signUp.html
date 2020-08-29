@@ -5,11 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="../images/favicon.ico" />
-    <title>Signup page</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>HTML Form Validation</title>
   </head>
-  <body>
-    <div class="container">
-      <h1>Sign Up</h1>
+  <body onload="setTimeout(hidefunc(),20000)">
+    <div id="loading">
+      <div id="ring">
+        Loading
+        <span></span>
+      </div>
     </div>
+
+    <div class="container">
+      <form id="form" class="form">
+        <h2>Sign Up</h2>
+        <div class="form-control">
+          <label for="unsername">Username</label>
+          <input type="text" id="username" placeholder="Enter username" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input type="text" id="email" placeholder="Enter email" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" />
+          <small>Error Message</small>
+        </div>
+        <div class="form-control">
+          <label for="confirmpassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmpassword"
+            placeholder="Confirm Password"
+          />
+          <small>Error Message</small>
+        </div>
+        <button>Submit</button>
+      </form>
+
+      <a href="../index.html">
+        <button class="home">Home</button>
+      </a>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
