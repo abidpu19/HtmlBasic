@@ -189,7 +189,12 @@ h2 {
   margin-top: 20px;
   width: 100%;
 }
-
+.form button:focus {
+  outline: 0;
+}
+button.home:focus {
+  outline: 0;
+}
 button.home {
   cursor: pointer;
   background-color: #eb5160;
