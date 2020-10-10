@@ -13,9 +13,19 @@ const songs = [
     atrist: "Gulshan Kumar",
   },
   {
-    name: "Sanam re",
-    title: "Sanam Re",
-    atrist: "Gulshan Kumar",
+    name: "Mera Deewanapan",
+    title: "Mera Deewanapan",
+    atrist: "Arminder Gill",
+  },
+  {
+    name: "Meray Paas Tum Ho",
+    title: "Meray Paas Tum Ho",
+    atrist: "Hadiya hashmi",
+  },
+  {
+    name: "Theth Punjaban",
+    title: "Theth Punjaban",
+    atrist: "Gur Sindhu",
   },
 ];
 
@@ -25,6 +35,7 @@ let isPlaying = false;
 const playMusic = () => {
   isPlaying = true;
   music.play();
+  music.volume = 0.5;
   play.classList.replace("fa-play", "fa-pause");
   img.classList.add("animations");
 };
