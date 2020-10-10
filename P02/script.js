@@ -57,4 +57,30 @@ play.addEventListener("click", () => {
   isPlaying ? pauseMusic() : playMusic();
 });
 
-//
+const loadSong = (songs) => {
+  title.textContent = songs.title;
+  atrist.textContent = songs.atrist;
+  music.src = `audio/${songs.name}.mp3`;
+  img.src = `images/${songs.name}.jpg`;
+};
+//update the music data
+
+songIndex = 0;
+// loadSong(songs);
+
+const nextSong = () => {
+  //   songIndex++;
+  songIndex = (songIndex + 1) % songs.length;
+  loadSong(songs[songIndex]);
+  playMusic();
+};
+
+//Previous Song
+const prevSong = () => {
+  songIndex = (songIndex - 1 + songs.length) % songs.length;
+  loadSong(songs[songIndex]);
+  playMusic();
+};
+
+next.addEventListener("click", nextSong);
+prev.addEventListener("click", prevSong);
