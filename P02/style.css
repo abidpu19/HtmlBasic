@@ -117,7 +117,7 @@ img {
 
 /* animation */
 .animations {
-  animation: rotateimg 3s linear infinite;
+  animation: rotateimg 7s linear infinite;
 }
 @keyframes rotateimg {
   from {
