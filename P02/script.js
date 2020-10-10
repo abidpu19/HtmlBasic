@@ -5,6 +5,10 @@ const title = document.getElementById("title");
 const atrist = document.getElementById("atrist");
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
+let prgress = document.getElementById("prgress");
+let current_time = document.getElementById("current_time");
+let durationdiv = document.getElementById("duration");
+const progress_div = document.getElementById("progress_div");
 
 const songs = [
   {
@@ -81,6 +85,48 @@ const prevSong = () => {
   loadSong(songs[songIndex]);
   playMusic();
 };
+
+// progress update
+music.addEventListener("timeupdate", (event) => {
+  //   console.log(event);
+  const { currentTime, duration } = event.srcElement;
+  //   console.log(currentTime, duration);
+  let progress_time = (currentTime / duration) * 100;
+  prgress.style.width = `${progress_time}%`;
+
+  //total duration update
+  let min_duration = Math.floor(duration / 60);
+  let sec_duration = Math.floor(duration % 60);
+
+  if (sec_duration < 10) {
+    sec_duration = `0${sec_duration}`;
+  }
+
+  let total_duration = `${min_duration}:${sec_duration}`;
+  if (duration) {
+    durationdiv.textContent = `${total_duration}`;
+  }
+  //current duration update
+  let min_currentTime = Math.floor(currentTime / 60);
+  let sec_currentTime = Math.floor(currentTime % 60);
+
+  if (sec_currentTime < 10) {
+    sec_currentTime = `0${sec_currentTime}`;
+  }
+
+  let total_currentTime = `${min_currentTime}:${sec_currentTime}`;
+  current_time.textContent = `${total_currentTime}`;
+});
+
+progress_div.addEventListener("click", (event) => {
+  const { duration } = music;
+  //   const duration = music.duration;
+  let move_progress = (event.offsetX / event.srcElement.clientWidth) * duration;
+
+  music.currentTime = move_progress;
+});
+
+music.addEventListener("ended", nextSong);
 
 next.addEventListener("click", nextSong);
 prev.addEventListener("click", prevSong);
