@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div></div>
+    <div class="main_div">
+      <div class="music_container">
+        <h2 id="title">sanam re</h2>
+        <h3 id="atrist">Arjit Sing</h3>
+        <div class="img_container">
+          <img src="./images/Sanam re.jpg" alt="Sanam Re" />
+        </div>
+        <audio src="./audio/Sanam Re.mp3"></audio>
+
+        <!-- progress bar -->
+        <div class="progressbar_container" id="progress_container">
+          <div class="progress_duration">
+            <div class="current_time" id="current_time">00:00</div>
+            <div class="duration" id="duration">00:00</div>
+          </div>
+          <div class="progress_div" id="progress_div">
+            <div class="progress" id="prgress"></div>
+          </div>
+        </div>
+        <!-- controls -->
+        <div class="music_controls">
+          <i class="fas fa-backward" id="prev" title="Previous"></i>
+          <i class="fas fa-play main_button" id="play" title="Play"></i>
+          <i class="fas fa-forward" id="next" title="Next"></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
